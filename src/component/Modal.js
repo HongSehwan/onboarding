@@ -20,7 +20,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalBtn = styled.button`
-  background-color: #4000c7;
+  background-color: #835949;
   text-decoration: none;
   border: none;
   padding: 20px;
@@ -30,7 +30,6 @@ export const ModalBtn = styled.button`
 `;
 
 export const ModalView = styled.div.attrs(props => ({
-  // attrs 메소드를 이용해서 아래와 같이 div 엘리먼트에 속성을 추가할 수 있습니다.
   role: 'dialog'
 }))`
     border-radius: 10px;
@@ -38,14 +37,16 @@ export const ModalView = styled.div.attrs(props => ({
     width: 300px;
     height: 100px;
 
-    > div.close_btn {
+    > button.close-btn {
       margin-top: 5px;
       cursor: pointer;
+      background-color: white;
+      border: none;
     }
 
     > div.desc {
       margin-top: 25px;
-      color: #4000c7;
+      color: #835949;
     }
 `;
 
@@ -61,12 +62,14 @@ export const Modal = () => {
           {isOpen === false ? 'Open Modal' : 'Opened!'}
         </ModalBtn>
         {isOpen === true ? <ModalBackdrop onClick={openModalHandler}>
-          <ModalView onClick={(e) => e.stopPropagation()}>
-            <span onClick={openModalHandler} className='close-btn'>&times;</span>
-            <div className='desc'>HELLO CODESTATES!</div>
+          <ModalView onClick={(e) => e.preventDefault()()}>
+            <button onClick={openModalHandler} className='close-btn'>&times;</button>
+            <div className='desc'>HELLO WORLD!</div>
           </ModalView>
         </ModalBackdrop> : null}
       </ModalContainer>
     </>
   );
 };
+
+export default Modal;

@@ -179,3 +179,5 @@ export const DropDown = ({ options, handleDropDownClick, selected }) => {
     </DropDownContainer>
   );
 };
+
+export default Autocomplete

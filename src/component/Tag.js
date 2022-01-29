@@ -30,7 +30,7 @@ export const TagsInput = styled.div`
       list-style: none;
       border-radius: 6px;
       margin: 0 8px 8px 0;
-      background: #4000c7;
+      background: #835949;
       > .tag-close-icon {
         display: block;
         width: 16px;
@@ -99,3 +99,5 @@ export const Tag = () => {
     </>
   );
 };
+
+export default Tag;

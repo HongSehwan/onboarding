@@ -19,7 +19,7 @@ const TabMenu = styled.ul`
   }
 
   .focused {
-    background-color: #4000c7;
+    background-color: #835949;
     color: rgba(255, 255, 255, 1);
     transition: 0.3s;
   }
@@ -69,3 +69,5 @@ export const Tab = () => {
     </>
   );
 };
+
+export default Tab;

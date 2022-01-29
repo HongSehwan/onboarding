@@ -4,18 +4,18 @@ import styled from 'styled-components';
 const ToggleContainer = styled.div`
     position: relative;
     margin-top: 8rem;
-    left: 47%;
+    left: 48.6%;
     cursor: pointer;
 
     > .toggle-container {
         width: 50px;
         height: 24px;
         border-radius: 30px;
-        background-color: #8b8b8b;
+        background-color: #8d837f;
         transition: all .2s ease;
 
         &.toggle--checked {
-            background-color: #4000c7;
+            background-color: rgb(250, 250, 250);
         }
     }
 
@@ -26,7 +26,7 @@ const ToggleContainer = styled.div`
         width: 22px;
         height: 22px;
         border-radius: 50%;
-        background-color: #fafafa;
+        background-color: #794936;
         transition: all .25s ease;
 
         &.toggle--checked {
@@ -51,9 +51,11 @@ export const Toggle = () => {
     <>
       <ToggleContainer onClick={toggleHandler}>
         <div className={`toggle-container ${isOn ? 'toggle--checked' : ''}`} />
-        <div className={`toggle-circle ${isOn ? 'toggle--checked' : ''}`} />
+        <but className={`toggle-circle ${isOn ? 'toggle--checked' : ''}`} />
       </ToggleContainer>
       {isOn ? <Desc>Toggle Switch ON</Desc> : <Desc>Toggle Switch OFF</Desc>}
     </>
   );
 };
+
+export default Toggle;

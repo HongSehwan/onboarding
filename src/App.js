@@ -1,9 +1,9 @@
-import { Toggle } from './component/Toggle';
-import { Modal } from './component/Modal';
-import { Tag } from './component/Tag';
-import { Autocomplete } from './component/AutoComplete';
-import { ClickToEdit } from './component/ClickToEdit';
-import { Tab } from './component/Tab';
+import Toggle from './component/Toggle';
+import Modal from './component/Modal';
+import Tag from './component/Tag';
+import Autocomplete from './component/AutoComplete';
+import ClickToEdit from './component/ClickToEdit';
+import Tab from './component/Tab';
 import './App.css';
 
 const App = () => {

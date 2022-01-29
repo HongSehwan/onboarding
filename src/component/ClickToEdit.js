@@ -21,7 +21,7 @@ export const InputEdit = styled.input`
 export const InputView = styled.div`
   text-align: center;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 4em;
 
   div.view {
     margin-top: 3rem;
@@ -70,7 +70,7 @@ export const MyInput = ({ value, handleValueChange }) => {
 };
 
 const cache = {
-  name: '김코딩',
+  name: '코딩박',
   age: 20
 };
 
@@ -94,3 +94,5 @@ export const ClickToEdit = () => {
     </>
   );
 };
+
+export default ClickToEdit;

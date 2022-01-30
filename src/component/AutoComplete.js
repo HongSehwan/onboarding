@@ -96,13 +96,10 @@ export const Autocomplete = () => {
     const { value } = event.target;
     if (value.includes('\\')) return;
 
-    // input에 텍스트가 있는지 없는지 확인하는 코드
     value ? setHasText(!hasText) : setHasText(hasText);
 
-    // updateText
     setInputValue(value);
 
-    // dropdown을 위한 기능
     const filterRegex = new RegExp(value, 'i');
     const resultOptions = deselectedOptions.filter((option) =>
       option.match(filterRegex)
@@ -123,8 +120,6 @@ export const Autocomplete = () => {
   };
 
   const handleKeyUp = (event) => {
-    // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/getModifierState#example
-    // eslint-disable-next-line
     if (event.getModifierState("Fn") || event.getModifierState("Hyper") || event.getModifierState("OS") || event.getModifierState("Super") || event.getModifierState("Win")) return; if (event.getModifierState("Control") + event.getModifierState("Alt") + event.getModifierState("Meta") > 1) return;
     if (hasText) {
       if (event.code === 'ArrowDown' && options.length - 1 > selected) {

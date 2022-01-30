@@ -64,19 +64,17 @@ export const TagsInput = styled.div`
 `;
 
 export const Tag = () => {
-  // const selectedTags = (tags) => console.log(tags);
-  const initialTags = ['CodeStates', 'kimcoding'];
+  const initialData = ['kimcoding', 'parkhacker'];
 
-  const [tags, setTags] = useState(initialTags);
-  const removeTags = (indexToRemove) => {
-    setTags(tags.filter((_, index) => index !== indexToRemove));
+  const [tags, setTags] = useState(initialData);
+  const handleRemove = (indexToRemove) => {
+    setTags(tags.filter((el, index) => index !== indexToRemove));
   };
 
-  const addTags = (event) => {
+  const handleAdd = (event) => {
     const filtered = tags.filter((el) => el === event.target.value);
     if (event.target.value !== '' && filtered.length === 0) {
       setTags([...tags, event.target.value]);
-      // selectedTags([...tags, event.target.value]);
       event.target.value = '';
     }
   };
@@ -88,13 +86,13 @@ export const Tag = () => {
           {tags.map((tag, index) => (
             <li key={index} className='tag'>
               <span className='tag-title'>{tag}</span>
-              <span className='tag-close-icon' onClick={() => removeTags(index)}>
+              <span className='tag-close-icon' onClick={() => handleRemove(index)}>
                 &times;
               </span>
             </li>
           ))}
         </ul>
-        <input className='tag-input' type='text' onKeyUp={(event) => (event.key === 'Enter' ? addTags(event) : null)} placeholder='Press enter to add tags' />
+        <input className='tag-input' type='text' onKeyUp={(event) => (event.key === 'Enter' ? handleAdd(event) : null)} placeholder='Press enter to add tags' />
       </TagsInput>
     </>
   );

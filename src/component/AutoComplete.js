@@ -2,16 +2,17 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const deselectedOptions = [
-  'rustic',
-  'antique',
-  'vinyl',
-  'vintage',
-  'refurbished',
-  '신품',
-  '빈티지',
-  '중고A급',
-  '중고B급',
-  '골동품'
+  'coding',
+  'computer',
+  'A급 상품',
+  'B급 상품',
+  '기대감',
+  'dropdown',
+  'pie',
+  'word',
+  'NBA',
+  'shotgun',
+  '소방관'
 ];
 
 const boxShadow = '0 4px 6px rgb(32 33 36 / 28%)';
@@ -119,7 +120,7 @@ export const Autocomplete = () => {
     setInputValue('');
   };
 
-  const handleKeyUp = (event) => {
+  const handleKeyPress = (event) => {
     if (event.getModifierState("Fn") || event.getModifierState("Hyper") || event.getModifierState("OS") || event.getModifierState("Super") || event.getModifierState("Win")) return; if (event.getModifierState("Control") + event.getModifierState("Alt") + event.getModifierState("Meta") > 1) return;
     if (hasText) {
       if (event.code === 'ArrowDown' && options.length - 1 > selected) {
@@ -136,7 +137,7 @@ export const Autocomplete = () => {
   };
 
   return (
-    <div className='autocomplete-wrapper' onKeyUp={handleKeyUp}>
+    <div className='autocomplete-wrapper' onKeyPress={handleKeyPress}>
       <InputContainer hasText={hasText}>
         <input
           type='text'

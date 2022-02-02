@@ -1,7 +1,6 @@
 import Toggle from './component/Toggle';
 import Modal from './component/Modal';
 import Tag from './component/Tag';
-import Autocomplete from './component/AutoComplete';
 import ClickToEdit from './component/ClickToEdit';
 import Tab from './component/Tab';
 import './App.css';
@@ -26,10 +25,6 @@ const App = () => {
         <div className='box'>
           <div className='sub_title'>Tag</div>
           <Tag />
-        </div>
-        <div className='box'>
-          <div className='sub_title'>Autocomplete</div>
-          <Autocomplete />
         </div>
         <div className='box'>
           <div className='sub_title'>ClickToEdit</div>
